@@ -1,24 +1,3 @@
-const journalEntries = [
-    {
-        date: "07/24/2018",
-        concept: "Array methods",
-        entry: "We learned about 4 different array methods today. forEach made sense, but the others still confuse me.",
-        mood: "Frustrated"
-    },
-    {
-        date: "07/26/2018",
-        concept: "Functions",
-        entry: "There are a ton of ways to use functions.",
-        mood: "Excited"
-    },
-    {
-        date: "07/27/2018",
-        concept: "Grunt",
-        entry: "Grunt is amazing.I like how I can automate all the things.",
-        mood: "Excited"
-    }
-];
-
 
 // function to return responses from form input
 const createJournalResponses = (concept, date, entry, mood) => {
@@ -46,10 +25,18 @@ const createJournalResponses = (concept, date, entry, mood) => {
 
 // //Now write a function whose reponsibility is to iterate your array of journal entries and add them to the DOM.
 
-const renderJournalResponse = () => {
-    journalEntries.forEach( journalEntry => {
-        createJournalResponses(journalEntry.date, journalEntry.concept, journalEntry.entry, journalEntry.mood)
-    });
-};
+// const renderJournalResponse = () => {
+//     entries.forEach( journalEntry => {
+//         createJournalResponses(journalEntry.date, journalEntry.concept, journalEntry.entry, journalEntry.mood)
+//     });
+// };
     
-renderJournalResponse(journalEntry);
+// renderJournalResponse(journalEntry);
+const sumbissionResponses = {
+returnSubmission () {
+    return fetch ("http://localhost:3000/entries")
+    .then ( response => response.json())
+    }
+}
+
+console.log(sumbissionResponses.returnSubmission());
