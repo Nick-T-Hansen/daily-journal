@@ -1,30 +1,43 @@
-/*
-    Main application logic that uses the functions and objects
-    defined in the other JavaScript files.
+//Main application logic that uses the functions and objects defined in the other JavaScript files.
 
-    Change the fake variable names below to what they should be
-    to get the data and display it.
+/* -------------------- TO DO ----------------------------
+POST is not working
+-information submitted in the form does not post to the server 
+-click on button does work
+-no errors in console
+-page looks like it is refreshing to its prior state when click is hit (is this a possibility?)
 */
+
+
 API.getJournalEntries()
     .then(entriesDOM.renderJournalResponse)
+    
 
-//logic to add an event listener to the submit putton, and post the information into the JSON
-let journalDateInput = document.querySelector("#journalDate");
-let journalConceptInput = document.querySelector("#conceptsCovered");
-let journalEntryInput = document.querySelector("#journalEntry");
-let journalMoodInput = document.querySelector("#mood")
+//creates an event listener which takes the form values, turns it into an object, and posts it to the JSON
+const eventListeners = {
+    journalEntryAppendToJSON () {
+        let resetJournalEntriesQuery = document.querySelector(".entryLog")
+        resetJournalEntriesQuery.innerHTML = " ";
+        let journalDateInput = document.querySelector("#journalDate").value;
+        let journalConceptInput = document.querySelector("#conceptsCovered").value;
+        let journalEntryInput = document.querySelector("#journalEntry").value;
+        let journalMoodInput = document.querySelector("#mood").value
 
-let journalEntryObject = {
-    "date": journalDateInput.value,
-    "concept": journalConceptInput.value,
-    "entry": journalEntryInput.value,
-    "mood": journalMoodInput.value
-}
+        const journalEntryObject = {
+            "date": journalDateInput,
+            "concept": journalConceptInput,
+            "entry": journalEntryInput,
+            "mood": journalMoodInput
+        }
+        API.postJournalEntries(journalEntryObject)
+            .then(repost => {
+                console.log(repost)
+                entriesDOM.renderJournalResponse()
+            });
+        
+    }
+};
 
-fetch("localhost:3000/entries"
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json"
-    },
-    body: JSON.stringify(journalEntryObject)
-})
+
+
+
