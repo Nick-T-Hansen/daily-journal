@@ -5,6 +5,7 @@ const createJournalResponses = (concept, date, entry, mood) => {
     let articleInput = document.querySelector(".entryLog");
 
     let journalResponse = document.createElement("section");
+    journalResponse.className = "JournalEntryResponse"
     articleInput.appendChild(journalResponse);
     
     let conceptResponse = document.createElement("h2");
@@ -22,4 +23,5 @@ const createJournalResponses = (concept, date, entry, mood) => {
     let moodResponse = document.createElement ("p");
     conceptResponse.appendChild(moodResponse);
     moodResponse.innerHTML = mood;
+    
 };
