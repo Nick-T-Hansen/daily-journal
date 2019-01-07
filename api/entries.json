@@ -1,22 +1,32 @@
 {
-    "entries": [
-        {
-            "date": "07/24/2018",
-            "concept": "Array methods",
-            "entry": "We learned about 4 different array methods today. forEach made sense, but the others still confuse me.",
-            "mood": "Frustrated"
-        },
-        {
-            "date": "07/26/2018",
-            "concept": "Functions",
-            "entry": "There are a ton of ways to use functions.",
-            "mood": "Excited"
-        },
-        {
-            "date": "07/27/2018",
-            "concept": "Grunt",
-            "entry": "Grunt is amazing.I like how I can automate all the things.",
-            "mood": "Excited"
-        }
-    ]
+  "entries": [
+    {
+      "date": "07/24/2018",
+      "concept": "Array methods",
+      "entry": "We learned about 4 different array methods today. forEach made sense, but the others still confuse me.",
+      "mood": "Frustrated",
+      "id": 1
+    },
+    {
+      "date": "07/26/2018",
+      "concept": "Functions",
+      "entry": "There are a ton of ways to use functions.",
+      "mood": "Excited",
+      "id": 2
+    },
+    {
+      "date": "07/27/2018",
+      "concept": "Grunt",
+      "entry": "Grunt is amazing.I like how I can automate all the things.",
+      "mood": "Excited",
+      "id": 3
+    },
+    {
+      "date": "1111-11-11",
+      "concept": "11",
+      "entry": "11",
+      "mood": "sad",
+      "id": 4
+    }
+  ]
 }
